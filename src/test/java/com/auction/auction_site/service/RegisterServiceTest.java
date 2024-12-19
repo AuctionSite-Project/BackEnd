@@ -1,6 +1,7 @@
 package com.auction.auction_site.service;
 
-import com.auction.auction_site.repository.UserRepository;
+import com.auction.auction_site.repository.user.UserRepository;
+import com.auction.auction_site.service.user.UserServiceImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,7 +18,7 @@ public class RegisterServiceTest {
     private UserRepository userRepository;
 
     @InjectMocks
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @Test
     @DisplayName("회원을 등록한다")

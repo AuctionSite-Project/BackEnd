@@ -2,22 +2,24 @@ package com.auction.auction_site.entity;
 
 import com.auction.auction_site.dto.Role;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
-@Getter @Setter
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Builder
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true) // 중복 방지
-    private int id;
+    @Column(name = "user_id")
+    private Long id;
 
     private String username;
 
     private String password;
 
-    @Column(unique = true) // 중복 방지
     private String nickname;
 
     private String phoneNumber;
